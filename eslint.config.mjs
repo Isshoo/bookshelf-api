@@ -5,7 +5,7 @@ import daStyle from 'eslint-config-dicodingacademy';
 
 export default [
   daStyle,
-  { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
+  { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' }, rules: { 'linebreak-style': 'off' } },
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,
 ];
