@@ -8,8 +8,8 @@ const addBookHandler = (request, h) => {
   } = request.payload;
 
   const id = nanoid(16);
-  const finished = readPage === pageCount;
   const insertedAt = new Date().toISOString();
+  const finished = readPage === pageCount;
   const updatedAt = insertedAt;
 
   const newBook = {
@@ -66,7 +66,7 @@ const getAllBooksHandler = (request, h) => {
   }
 
   if (request.query.reading){
-    filtered = filtered.filter((book) => book.reading);
+    filtered = filtered.filter((book) => book.reading === (request.query.reading==='1'));
   }
 
   if (request.query.finished !== undefined){
